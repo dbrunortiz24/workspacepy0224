@@ -46,6 +46,21 @@ while True:
 #2. Realizar un programa que tenga una clase producto el cual solo tiene los atributos de nombre y codigo
 # el codigo tiene la siguiente estructura PAIS-LOTE-AÑO ejemplo:PERU-00001-2024 crear un metodo que imprima el objeto de forma 
 # literal (__str__) y que permita identificar el pais de origen y nro de lote
+class Producto:
+    def __init__(self, nombre, codigo):
+        self.nombre = nombre
+        self.codigo = codigo
+
+    def __str__(self):
+        # Extraemos las partes del código
+        pais, lote, anio = self.codigo.split("-")
+        return f"Producto: {self.nombre}\nCódigo: {self.codigo}\nPaís de origen: {pais}\nNúmero de lote: {lote}"
+
+# Crear un objeto de la clase Producto
+producto1 = Producto("Filtro de aceite", "PERU-00001-2024")
+
+# Imprimir el objeto de forma literal
+print(producto1)
 
 
 #3. Del siguiente texto :
@@ -60,6 +75,17 @@ print(f"Texto en minúsculas: {texto_minusculas}")
 print(f"Texto en mayúsculas: {texto_mayusculas}")
 
 ## Segunda funcion string
+palabras = texto.split(" ")
+print(f"Palabras en el texto: {palabras}")
+
+## Tercera funcion string
+ocurrencias = texto.count("Lorem")
+print(f"Ocurrencias de 'Lorem': {ocurrencias}")
+
+## Cuarta funcion string
+texto = "Lorem Ipsum is simply dummy text..."
+longitud = len(texto)
+print(f"Longitud del texto: {longitud}")
 
 
 
